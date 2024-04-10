@@ -6,7 +6,8 @@ Rectify_Point and Solfpnp. Программирование квадрокопт
 
 <details>
       <summary>Фотография части кода</summary>
-      ![image](https://github.com/CentaurWitch/Flying-Robotics-I-National-Technic-Olympiad/assets/149146826/40d828eb-b8d7-4414-b67d-30c668bac5fa)
+      <img width="672" alt="image" src="https://github.com/CentaurWitch/Flying-Robotics-I-National-Technic-Olympiad/assets/149146826/dae1d4dd-e078-406a-a901-90cd8da8aad9">
+
 </details>
 
 Рассмотрим код подробнее:
