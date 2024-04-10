@@ -49,7 +49,7 @@ Rectify_Point and Solfpnp. Программирование квадрокопт
       if xy is None:
             return
 
-      ——————————
+      #——————————
 
       def get_center_of_mass(mask):
       M = cv2.moments(mask)
