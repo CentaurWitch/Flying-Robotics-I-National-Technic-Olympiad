@@ -65,5 +65,21 @@ Rectify_Point and Solfpnp. Программирование квадрокопт
 
 Функция get_center_of_mass() основана на получении координаты объекта в объективе камеры (Просчитывание моментов)
 
+<details>
+      <summary>Часть кода</summary>
+      
+      # calculate and publish the position of the circle in 3D space
+      altitude = get_telemetry('terrain').z
+      xy3d = img_xy_to_point(xy, altitude)
+      target = PointStamped(header=msg.header, point=xy3d)
+      point_pub.publish(target)
 
+      if follow_red_circle:
+            # follow the target
+            setpoint = tf_buffer.transform(target, 'map', timeout=rospy.Duration(0.2))
+            set_position(x=setpoint.point.x, y=setpoint.point.y, z=nan, yaw=nan, frame_id=setpoint.header.frame_id)
+
+</details>
+
+Эта часть кода необходима для просчета координаты объекта относительно 3Д-мира и последующей установки позиции над объектом. А также для вывода в точки XY в 3Д-пространстве в топик /red-circle
 
