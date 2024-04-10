@@ -34,3 +34,39 @@ Rectify_Point and Solfpnp. Программирование квадрокопт
       Функция cv2.inRange отвечает за диапозон цвета в HSV-диапазоне, т.к. используется переменная img_hsv
       Функция cv2.bitwise_or() служит для объединения двух диапозонов в один, с последующем выбором, к какому точно диапазону относится
 </details>
+
+<details>
+      <summary>Часть кода</summary>
+      
+      # publish the mask
+      if mask_pub.get_num_connections() > 0:
+            mask_pub.publish(bridge.cv2_to_imgmsg(mask, 'mono8'))
+
+      ——————————
+
+      Данная часть кода отвечает за публикацию маски в ЧБ, если имеется соединение.
+</details>
+
+<details>
+      <summary>Часть кода</summary>
+      
+      # calculate x and y of the circle
+      xy = get_center_of_mass(mask)
+      if xy is None:
+            return
+
+      ——————————
+
+      Данная часть кода узнают центр маски (Координаты X и координаты Y)
+      Если же ничего не получили (xy is None), то эта часть начнет повторятся (return)
+
+      ——————————
+      
+      def get_center_of_mass(mask):
+      M = cv2.moments(mask)
+      if M['m00'] == 0:
+            return None
+      return M['m10'] // M['m00'], M['m01'] // M['m00']
+
+      Функция get_center_of_mass() основана на получении координаты объекта в объективе камеры (Просчитывание моментов)
+</details>
