@@ -14,4 +14,5 @@ Rectify_Point and Solfpnp. Программирование квадрокопт
 <details>
       <summary>Часть кода</summary>
       img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+      -
 </details>
