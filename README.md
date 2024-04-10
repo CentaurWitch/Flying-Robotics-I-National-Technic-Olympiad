@@ -13,6 +13,7 @@ Rectify_Point and Solfpnp. Программирование квадрокопт
 Рассмотрим код подробнее:
 <details>
       <summary>Часть кода</summary>
+      
       img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
       В данной части видно, что переменная **img_hsv** равна преобразованию переменной **img** в HSV-диапозон
